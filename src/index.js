@@ -5,76 +5,46 @@ import Rectangulo from './Rectangulo'
 import Octagono from './Octagono'
 import Decagono from './Decagono'
 
-String.prototype.mayus = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
 
 document.getElementsByTagName('select')[0].addEventListener('change', e => {
     console.clear()
     let poligono = e.target.value
 
-        let poligonos = ["circulo", "triangulo", "cuadrado", "rectangulo", "octagono", "decagono"]
 
-        let figura = poligonos.filter(polig => polig == poligono).toString()
-        console.log(figura)
+    let instancia = ""
+    switch (poligono) {
+        case "circulo":
+            instancia = new Circulo
+            consolaAreaPerimetro()
+            break;
+        case "triangulo":
+            instancia = new Triangulo
+            consolaAreaPerimetro()
+            break;
+        case "cuadrado":
+            instancia = new Cuadrado
+            consolaAreaPerimetro()
+            break;
+        case "rectangulo":
+            instancia = new Rectangulo
+            consolaAreaPerimetro()
+            break;
+        case "octagono":
+            instancia = new Octagono
+            consolaAreaPerimetro()
+            break;
+        case "decagono":
+            instancia = new Decagono
+            consolaAreaPerimetro()
+            break;
+        default:
+            console.log("Selecciona un polígono")
+    }
 
-        let Figura = figura.mayus()
-        console.log(Figura)
 
-
-    let calculos = new 
-    console.log(`Perimetro del ${Figura} ===> ${figura.perimetro()}`)
-    console.log(`Area del ${Figura} ===> ${figura.area()}`)
+    function consolaAreaPerimetro() {
+        console.log(`Perimetro del ${poligono} ===> ${instancia.perimetro()}`)
+        console.log(`Area del ${poligono} ===> ${instancia.area()}`)
+    }
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // if (poligono === 'circulo') {
-        //     let circulo = new Circulo()
-        //     console.log(`Perimetro del Circulo ===> ${circulo.perimetro()}`)
-        //     console.log(`Area del Circulo ===> ${circulo.area()}`)
-        //   }
-        //   if (poligono === 'triangulo') {
-        //     let triangulo = new Triangulo()
-        //     console.log(`Perimetro del Triangulo ===> ${triangulo.perimetro()}`)
-        //     console.log(`Area del Triangulo ===> ${triangulo.area()}`)
-        //   }
-        //   if (poligono === 'cuadrado') {
-        //     let cuadrado = new Cuadrado()
-        //     console.log(`Perimetro del Cuadrado ===> ${cuadrado.perimetro()}`)
-        //     console.log(`Area del Cuadrado ===> ${cuadrado.area()}`)
-        //   }
-        //   if (poligono === 'rectangulo') {
-        //     let rectangulo = new Rectangulo()
-        //     console.log(`Perimetro del Rectangulo ===> ${rectangulo.perimetro()}`)
-        //     console.log(`Area del Rectangulo ===> ${rectangulo.area()}`)
-        //   }
-        //   if (poligono === 'octagono') {
-        //     let octagono = new Octagono()
-        //     console.log(`Perimetro del Octagono ===> ${octagono.perimetro()}`)
-        //     console.log(`Area del Octagono ===> ${octagono.area()}`)
-        //   }
-        //   if (poligono === 'decagono') {
-        //     let decagono = new Decagono()
-        //     console.log(`Perimetro del Decagono ===> ${decagono.perimetro()}`)
-        //     console.log(`Area del Decagono ===> ${decagono.area()}`)
-        //   } 
