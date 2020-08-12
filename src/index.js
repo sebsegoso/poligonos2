@@ -9,9 +9,8 @@ import Decagono from './Decagono'
 document.getElementsByTagName('select')[0].addEventListener('change', e => {
     console.clear()
     let poligono = e.target.value
-
-
     let instancia = ""
+
     switch (poligono) {
         case "circulo":
             instancia = new Circulo
@@ -41,10 +40,8 @@ document.getElementsByTagName('select')[0].addEventListener('change', e => {
             console.log("Selecciona un polígono")
     }
 
-
     function consolaAreaPerimetro() {
         console.log(`Perimetro del ${poligono} ===> ${instancia.perimetro()}`)
         console.log(`Area del ${poligono} ===> ${instancia.area()}`)
     }
-
 })
