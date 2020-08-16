@@ -8,40 +8,20 @@ import Decagono from './Decagono'
 
 document.getElementsByTagName('select')[0].addEventListener('change', e => {
     console.clear()
-    let poligono = e.target.value
-    let instancia = ""
+    let select = e.target.value
+    let circulo = new Circulo()
+    let triangulo = new Triangulo()
+    let cuadrado = new Cuadrado()
+    let rectangulo = new Rectangulo()
+    let octagono = new Octagono()
+    let decagono = new Decagono()
+    let poligonos = [circulo, triangulo, cuadrado, rectangulo, octagono, decagono]
 
-    switch (poligono) {
-        case "circulo":
-            instancia = new Circulo
-            consolaAreaPerimetro()
-            break;
-        case "triangulo":
-            instancia = new Triangulo
-            consolaAreaPerimetro()
-            break;
-        case "cuadrado":
-            instancia = new Cuadrado
-            consolaAreaPerimetro()
-            break;
-        case "rectangulo":
-            instancia = new Rectangulo
-            consolaAreaPerimetro()
-            break;
-        case "octagono":
-            instancia = new Octagono
-            consolaAreaPerimetro()
-            break;
-        case "decagono":
-            instancia = new Decagono
-            consolaAreaPerimetro()
-            break;
-        default:
-            console.log("Selecciona un polígono")
-    }
+    let figuraEscogida = poligonos.filter((x) => x.id == select)
 
-    function consolaAreaPerimetro() {
-        console.log(`Perimetro del ${poligono} ===> ${instancia.perimetro()}`)
-        console.log(`Area del ${poligono} ===> ${instancia.area()}`)
+    console.log(`La figura escogida es = ${figuraEscogida[0].name}`)
+    if(figuraEscogida) {
+        console.log(`Perimetro del ${figuraEscogida[0].name} ===> ${figuraEscogida[0].perimetro()}`)
+        console.log(`Area del ${figuraEscogida[0].name} ===> ${figuraEscogida[0].area()}`)
     }
 })

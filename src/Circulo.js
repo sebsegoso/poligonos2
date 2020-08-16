@@ -3,11 +3,13 @@ import Poligono from "./Poligono"
 export default class Circulo extends Poligono {
     constructor() {
         super()
+        this.id = 1
+        this.name = 'circulo'
     }
-    area(){
+    area() {
         return Math.pow(this.radio, 2) * Math.PI
     }
-    perimetro(){
+    perimetro() {
         return Math.PI * 2 * this.radio
     }
 }
